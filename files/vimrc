@@ -1,0 +1,5 @@
+colorscheme slate
+set softtabstop=2 expandtab shiftwidth=2 smarttab
+filetype plugin indent on
+syntax on
+

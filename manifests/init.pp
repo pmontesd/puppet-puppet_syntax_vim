@@ -42,7 +42,7 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class puppet-syntax-vim {
+class puppet_syntax_vim {
 
   file { '/root/.vim':
     ensure => directory,
@@ -60,7 +60,7 @@ class puppet-syntax-vim {
   $plugin_dirs.each |String $dir| {
     file { "/root/.vim/${dir}":
       ensure  => directory,
-      source  => "puppet:///modules/puppet-syntax-vim/puppet-syntax-vim/${dir}",
+      source  => "puppet:///modules/${module_name}/puppet-syntax-vim/${dir}",
       recurse => true,
       owner   => 'root',
       group   => 'root',
@@ -70,7 +70,7 @@ class puppet-syntax-vim {
 
   file { '/root/.vimrc':
     ensure  => file,
-    source  => 'puppet:///modules/puppet-syntax-vim/vimrc',
+    source  => "puppet:///modules/${module_name}/vimrc",
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
